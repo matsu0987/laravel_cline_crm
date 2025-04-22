@@ -13,6 +13,17 @@ class CompanySeeder extends Seeder
      */
     public function run(): void
     {
+        // 管理者ユーザーを取得
+        $adminUser = \App\Models\User::where('role', 'admin')->first();
+
+        // 管理者ユーザーが存在しない場合は最初のユーザーを取得
+        if (!$adminUser) {
+            $adminUser = \App\Models\User::first();
+        }
+
+        // ユーザーIDを設定
+        $userId = $adminUser ? $adminUser->id : null;
+
         $companies = [
             [
                 'name' => '株式会社テクノソリューション',
@@ -24,7 +35,7 @@ class CompanySeeder extends Seeder
                 'city' => '東京都',
                 'industry' => 'IT',
                 'description' => 'クラウドソリューションとAIを専門とするITサービス企業',
-                'notes' => '年間売上：10億円、従業員数：120名'
+                'notes' => '年間売上：10億円、従業員数：120名',
             ],
             [
                 'name' => '株式会社日本商事',
@@ -36,7 +47,7 @@ class CompanySeeder extends Seeder
                 'city' => '大阪府',
                 'industry' => '商社',
                 'description' => '電子部品と半導体の輸出入を行う総合商社',
-                'notes' => '年間売上：50億円、従業員数：300名、海外拠点：5カ所'
+                'notes' => '年間売上：50億円、従業員数：300名、海外拠点：5カ所',
             ],
             [
                 'name' => '株式会社グローバルトレード',
@@ -48,7 +59,7 @@ class CompanySeeder extends Seeder
                 'city' => '神奈川県',
                 'industry' => '貿易',
                 'description' => 'アジア地域を中心とした輸出入ビジネスを展開',
-                'notes' => '年間取引額：30億円、主要取引国：中国、タイ、ベトナム'
+                'notes' => '年間取引額：30億円、主要取引国：中国、タイ、ベトナム',
             ],
             [
                 'name' => '株式会社フードデリバリー',
@@ -60,7 +71,7 @@ class CompanySeeder extends Seeder
                 'city' => '愛知県',
                 'industry' => 'フードサービス',
                 'description' => '飲食店向けデリバリーサービスとシステム開発',
-                'notes' => '契約店舗数：2000店、月間配達数：10万件'
+                'notes' => '契約店舗数：2000店、月間配達数：10万件',
             ],
             [
                 'name' => '北海道自然エネルギー株式会社',
@@ -72,7 +83,7 @@ class CompanySeeder extends Seeder
                 'city' => '北海道',
                 'industry' => 'エネルギー',
                 'description' => '風力・太陽光発電を中心とした再生可能エネルギー事業',
-                'notes' => '発電容量：50MW、CO2削減量：年間2万トン'
+                'notes' => '発電容量：50MW、CO2削減量：年間2万トン',
             ],
             [
                 'name' => '九州メディカルケア株式会社',
@@ -84,7 +95,7 @@ class CompanySeeder extends Seeder
                 'city' => '福岡県',
                 'industry' => '医療',
                 'description' => '医療機器の開発・販売および介護サービス事業',
-                'notes' => '取扱製品数：200種類、介護施設運営：10施設'
+                'notes' => '取扱製品数：200種類、介護施設運営：10施設',
             ],
             [
                 'name' => '東京建設工業株式会社',
@@ -96,7 +107,7 @@ class CompanySeeder extends Seeder
                 'city' => '東京都',
                 'industry' => '建設',
                 'description' => '商業施設・オフィスビルの設計・施工を手がける総合建設会社',
-                'notes' => '創業：1975年、完工実績：年間30件'
+                'notes' => '創業：1975年、完工実績：年間30件',
             ],
             [
                 'name' => '関西教育システム株式会社',
@@ -108,7 +119,7 @@ class CompanySeeder extends Seeder
                 'city' => '大阪府',
                 'industry' => '教育',
                 'description' => 'オンライン学習システムと教材開発を行う教育サービス企業',
-                'notes' => '導入学校数：500校、登録生徒数：10万人'
+                'notes' => '導入学校数：500校、登録生徒数：10万人',
             ],
             [
                 'name' => '中部物流株式会社',
@@ -120,7 +131,7 @@ class CompanySeeder extends Seeder
                 'city' => '愛知県',
                 'industry' => '物流',
                 'description' => '中部地方を中心とした物流・倉庫サービスを提供',
-                'notes' => '倉庫面積：5万平方メートル、車両保有数：100台'
+                'notes' => '倉庫面積：5万平方メートル、車両保有数：100台',
             ],
             [
                 'name' => '日本クリエイティブデザイン株式会社',
@@ -132,7 +143,7 @@ class CompanySeeder extends Seeder
                 'city' => '東京都',
                 'industry' => 'デザイン',
                 'description' => 'ブランディングとUIデザインを専門とするデザイン事務所',
-                'notes' => '受賞歴：グッドデザイン賞5回、クライアント数：年間50社'
+                'notes' => '受賞歴：グッドデザイン賞5回、クライアント数：年間50社',
             ]
         ];
 

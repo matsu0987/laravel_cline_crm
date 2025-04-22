@@ -22,20 +22,38 @@ class ContactSeeder extends Seeder
             return;
         }
 
+        // 管理者ユーザーを取得
+        $adminUser = \App\Models\User::where('role', 'admin')->first();
+
+        // 管理者ユーザーが存在しない場合は最初のユーザーを取得
+        if (!$adminUser) {
+            $adminUser = \App\Models\User::first();
+        }
+
+        // ユーザーIDを設定
+        $userId = $adminUser ? $adminUser->id : null;
+
+        if (!$userId) {
+            $this->command->info('ユーザーデータが存在しません。先にAdminUserSeederを実行してください。');
+            return;
+        }
+
         $contacts = [
             // 株式会社テクノソリューション
             [
                 'company_id' => 1,
+                'user_id' => $userId,
                 'first_name' => '太郎',
                 'last_name' => '鈴木',
                 'email' => 'suzuki.taro@technosolution.co.jp',
                 'phone' => '03-1234-5678',
                 'mobile' => '090-1234-5678',
                 'position' => '代表取締役社長',
-                'notes' => '創業者。技術背景があり、AIと機械学習に詳しい。'
+                'notes' => '創業者。技術背景があり、AIと機械学習に詳しい。',
             ],
             [
                 'company_id' => 1,
+                'user_id' => $userId,
                 'first_name' => '花子',
                 'last_name' => '佐藤',
                 'email' => 'sato.hanako@technosolution.co.jp',
@@ -48,6 +66,7 @@ class ContactSeeder extends Seeder
             // 株式会社日本商事
             [
                 'company_id' => 2,
+                'user_id' => $userId,
                 'first_name' => '一郎',
                 'last_name' => '田中',
                 'email' => 'tanaka.ichiro@nihonshouji.co.jp',
@@ -58,6 +77,7 @@ class ContactSeeder extends Seeder
             ],
             [
                 'company_id' => 2,
+                'user_id' => $userId,
                 'first_name' => '次郎',
                 'last_name' => '山田',
                 'email' => 'yamada.jiro@nihonshouji.co.jp',
@@ -70,6 +90,7 @@ class ContactSeeder extends Seeder
             // 株式会社グローバルトレード
             [
                 'company_id' => 3,
+                'user_id' => $userId,
                 'first_name' => '三郎',
                 'last_name' => '伊藤',
                 'email' => 'ito.saburo@globaltrade.co.jp',
@@ -80,6 +101,7 @@ class ContactSeeder extends Seeder
             ],
             [
                 'company_id' => 3,
+                'user_id' => $userId,
                 'first_name' => '恵子',
                 'last_name' => '高橋',
                 'email' => 'takahashi.keiko@globaltrade.co.jp',
@@ -92,6 +114,7 @@ class ContactSeeder extends Seeder
             // 株式会社フードデリバリー
             [
                 'company_id' => 4,
+                'user_id' => $userId,
                 'first_name' => '健太',
                 'last_name' => '渡辺',
                 'email' => 'watanabe.kenta@fooddelivery.jp',
@@ -102,6 +125,7 @@ class ContactSeeder extends Seeder
             ],
             [
                 'company_id' => 4,
+                'user_id' => $userId,
                 'first_name' => '美咲',
                 'last_name' => '加藤',
                 'email' => 'kato.misaki@fooddelivery.jp',
@@ -114,6 +138,7 @@ class ContactSeeder extends Seeder
             // 北海道自然エネルギー株式会社
             [
                 'company_id' => 5,
+                'user_id' => $userId,
                 'first_name' => '大輔',
                 'last_name' => '吉田',
                 'email' => 'yoshida.daisuke@hokkaido-energy.co.jp',
@@ -124,6 +149,7 @@ class ContactSeeder extends Seeder
             ],
             [
                 'company_id' => 5,
+                'user_id' => $userId,
                 'first_name' => '直子',
                 'last_name' => '山本',
                 'email' => 'yamamoto.naoko@hokkaido-energy.co.jp',
@@ -136,6 +162,7 @@ class ContactSeeder extends Seeder
             // 九州メディカルケア株式会社
             [
                 'company_id' => 6,
+                'user_id' => $userId,
                 'first_name' => '隆',
                 'last_name' => '中村',
                 'email' => 'nakamura.takashi@kyushu-medical.co.jp',
@@ -146,6 +173,7 @@ class ContactSeeder extends Seeder
             ],
             [
                 'company_id' => 6,
+                'user_id' => $userId,
                 'first_name' => '裕子',
                 'last_name' => '小林',
                 'email' => 'kobayashi.yuko@kyushu-medical.co.jp',
@@ -158,6 +186,7 @@ class ContactSeeder extends Seeder
             // 東京建設工業株式会社
             [
                 'company_id' => 7,
+                'user_id' => $userId,
                 'first_name' => '浩二',
                 'last_name' => '松本',
                 'email' => 'matsumoto.koji@tokyo-kensetsu.co.jp',
@@ -168,6 +197,7 @@ class ContactSeeder extends Seeder
             ],
             [
                 'company_id' => 7,
+                'user_id' => $userId,
                 'first_name' => '真理子',
                 'last_name' => '井上',
                 'email' => 'inoue.mariko@tokyo-kensetsu.co.jp',
@@ -180,6 +210,7 @@ class ContactSeeder extends Seeder
             // 関西教育システム株式会社
             [
                 'company_id' => 8,
+                'user_id' => $userId,
                 'first_name' => '誠',
                 'last_name' => '木村',
                 'email' => 'kimura.makoto@kansai-edu.co.jp',
@@ -190,6 +221,7 @@ class ContactSeeder extends Seeder
             ],
             [
                 'company_id' => 8,
+                'user_id' => $userId,
                 'first_name' => '由美',
                 'last_name' => '林',
                 'email' => 'hayashi.yumi@kansai-edu.co.jp',
@@ -202,6 +234,7 @@ class ContactSeeder extends Seeder
             // 中部物流株式会社
             [
                 'company_id' => 9,
+                'user_id' => $userId,
                 'first_name' => '健',
                 'last_name' => '清水',
                 'email' => 'shimizu.ken@chubu-logistics.co.jp',
@@ -212,6 +245,7 @@ class ContactSeeder extends Seeder
             ],
             [
                 'company_id' => 9,
+                'user_id' => $userId,
                 'first_name' => '拓也',
                 'last_name' => '斎藤',
                 'email' => 'saito.takuya@chubu-logistics.co.jp',
@@ -224,6 +258,7 @@ class ContactSeeder extends Seeder
             // 日本クリエイティブデザイン株式会社
             [
                 'company_id' => 10,
+                'user_id' => $userId,
                 'first_name' => '千尋',
                 'last_name' => '橋本',
                 'email' => 'hashimoto.chihiro@creative-design.jp',
@@ -234,6 +269,7 @@ class ContactSeeder extends Seeder
             ],
             [
                 'company_id' => 10,
+                'user_id' => $userId,
                 'first_name' => '翔太',
                 'last_name' => '近藤',
                 'email' => 'kondo.shota@creative-design.jp',
