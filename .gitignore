@@ -21,3 +21,7 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+# .gitignoreに追加する内容
+_ide_helper.php
+.phpstorm.meta.php
+_ide_helper_models.php
