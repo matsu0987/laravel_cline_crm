@@ -15,6 +15,18 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.*')">
+                        {{ __('Companies') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('contacts.index')" :active="request()->routeIs('contacts.*')">
+                        {{ __('Contacts') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('deals.index')" :active="request()->routeIs('deals.*')">
+                        {{ __('Deals') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('activities.index')" :active="request()->routeIs('activities.*')">
+                        {{ __('Activities') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -69,6 +81,18 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.*')">
+                {{ __('Companies') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('contacts.index')" :active="request()->routeIs('contacts.*')">
+                {{ __('Contacts') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('deals.index')" :active="request()->routeIs('deals.*')">
+                {{ __('Deals') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('activities.index')" :active="request()->routeIs('activities.*')">
+                {{ __('Activities') }}
             </x-responsive-nav-link>
         </div>
 
