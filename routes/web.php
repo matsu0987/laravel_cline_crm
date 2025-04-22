@@ -26,6 +26,25 @@ Route::middleware('auth')->group(function () {
     Route::resource('contacts', ContactController::class);
     Route::resource('deals', DealController::class);
     Route::resource('activities', ActivityController::class);
+
+    // API
+    Route::get('/api/companies/{company}/contacts', function (App\Models\Company $company) {
+        return $company->contacts()->select('id', 'first_name', 'last_name')
+            ->orderBy('last_name')
+            ->get()
+            ->map(function ($contact) {
+                return [
+                    'id' => $contact->id,
+                    'full_name' => $contact->full_name
+                ];
+            });
+    });
+
+    Route::get('/api/companies/{company}/deals', function (App\Models\Company $company) {
+        return $company->deals()->select('id', 'title')
+            ->orderBy('title')
+            ->get();
+    });
 });
 
 require __DIR__.'/auth.php';
