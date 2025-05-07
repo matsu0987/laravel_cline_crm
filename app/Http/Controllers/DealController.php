@@ -16,6 +16,7 @@ class DealController extends Controller
     public function index()
     {
         $deals = Deal::with(['company', 'contact'])->orderBy('expected_closing_date')->paginate(10);
+        //dd($deals);
         return view('deals.index', compact('deals'));
     }
 

@@ -13,19 +13,19 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        ダッシュボード
                     </x-nav-link>
                     <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.*')">
-                        {{ __('Companies') }}
+                        会社
                     </x-nav-link>
                     <x-nav-link :href="route('contacts.index')" :active="request()->routeIs('contacts.*')">
-                        {{ __('Contacts') }}
+連絡先
                     </x-nav-link>
                     <x-nav-link :href="route('deals.index')" :active="request()->routeIs('deals.*')">
-                        {{ __('Deals') }}
+                        商談
                     </x-nav-link>
                     <x-nav-link :href="route('activities.index')" :active="request()->routeIs('activities.*')">
-                        {{ __('Activities') }}
+                        活動
                     </x-nav-link>
                 </div>
             </div>
