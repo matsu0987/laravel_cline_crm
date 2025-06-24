@@ -75,7 +75,7 @@
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-lg font-semibold">{{ __('Contacts') }}</h3>
                         <a href="{{ route('contacts.create', ['company_id' => $company->id]) }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
-                            {{ __('Add Contact') }}
+                            {{ __('messages.Add Contact') }}
                         </a>
                     </div>
 
@@ -126,7 +126,7 @@
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-lg font-semibold">{{ __('Deals') }}</h3>
                         <a href="{{ route('deals.create', ['company_id' => $company->id]) }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
-                            {{ __('Add Deal') }}
+                            {{ __('messages.Add Deal') }}
                         </a>
                     </div>
 
@@ -179,7 +179,7 @@
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-lg font-semibold">{{ __('Activities') }}</h3>
                         <a href="{{ route('activities.create', ['company_id' => $company->id]) }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
-                            {{ __('Add Activity') }}
+                            {{ __('messages.Add Activity') }}
                         </a>
                     </div>
 

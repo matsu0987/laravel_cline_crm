@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Add Deal') }}
+            {{ __('messages.Add Deal') }}
             @if($selectedCompany)
                 {{ __('for') }} {{ $selectedCompany->name }}
                 @if($selectedContact)
