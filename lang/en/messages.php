@@ -1,0 +1,120 @@
+<?php
+
+return [
+    // Navigation
+    'Dashboard' => 'Dashboard',
+    'Companies' => 'Companies',
+    'Contacts' => 'Contacts',
+    'Deals' => 'Deals',
+    'Activities' => 'Activities',
+    'Profile' => 'Profile',
+    'Log Out' => 'Log Out',
+
+    // Common Actions
+    'Add' => 'Add',
+    'Edit' => 'Edit',
+    'Delete' => 'Delete',
+    'Save' => 'Save',
+    'Cancel' => 'Cancel',
+    'Create' => 'Create',
+    'Update' => 'Update',
+    'View' => 'View',
+    'Search' => 'Search',
+    'Actions' => 'Actions',
+    'Back' => 'Back',
+
+    // Companies
+    'Add Company' => 'Add Company',
+    'Edit Company' => 'Edit Company',
+    'Company Details' => 'Company Details',
+    'No companies found.' => 'No companies found.',
+    'Are you sure you want to delete this company?' => 'Are you sure you want to delete this company?',
+
+    // Contacts
+    'Add Contact' => 'Add Contact',
+    'Edit Contact' => 'Edit Contact',
+    'Contact Details' => 'Contact Details',
+    'No contacts found.' => 'No contacts found.',
+    'Are you sure you want to delete this contact?' => 'Are you sure you want to delete this contact?',
+
+    // Deals
+    'Add Deal' => 'Add Deal',
+    'Edit Deal' => 'Edit Deal',
+    'Deal Details' => 'Deal Details',
+    'New Deal' => 'New Deal',
+    'Active Deals' => 'Active Deals',
+    'Won Deals' => 'Won Deals',
+    'No deals found.' => 'No deals found.',
+    'No active deals found.' => 'No active deals found.',
+    'Are you sure you want to delete this deal?' => 'Are you sure you want to delete this deal?',
+
+    // Activities
+    'Add Activity' => 'Add Activity',
+    'Edit Activity' => 'Edit Activity',
+    'Activity Details' => 'Activity Details',
+    'New Activity' => 'New Activity',
+    'Upcoming Activities' => 'Upcoming Activities',
+    'Recent Activities' => 'Recent Activities',
+    'No activities found.' => 'No activities found.',
+    'No upcoming activities found.' => 'No upcoming activities found.',
+    'No recent activities found.' => 'No recent activities found.',
+    'Are you sure you want to delete this activity?' => 'Are you sure you want to delete this activity?',
+
+    // Fields
+    'Name' => 'Name',
+    'Email' => 'Email',
+    'Phone' => 'Phone',
+    'Mobile' => 'Mobile',
+    'Address' => 'Address',
+    'Website' => 'Website',
+    'Industry' => 'Industry',
+    'Position' => 'Position',
+    'Notes' => 'Notes',
+    'Title' => 'Title',
+    'Amount' => 'Amount',
+    'Status' => 'Status',
+    'Expected Closing' => 'Expected Closing',
+    'Probability' => 'Probability',
+    'Description' => 'Description',
+    'Type' => 'Type',
+    'Scheduled At' => 'Scheduled At',
+    'Company' => 'Company',
+    'Contact' => 'Contact',
+    'Deal' => 'Deal',
+    'First Name' => 'First Name',
+    'Last Name' => 'Last Name',
+    'Full Name' => 'Full Name',
+    'Related to' => 'Related to',
+    'Created at' => 'Created at',
+    'Updated at' => 'Updated at',
+
+    // Deal Statuses
+    'Prospecting' => 'Prospecting',
+    'Qualification' => 'Qualification',
+    'Needs analysis' => 'Needs Analysis',
+    'Proposal' => 'Proposal',
+    'Negotiation' => 'Negotiation',
+    'Closed won' => 'Closed Won',
+    'Closed lost' => 'Closed Lost',
+
+    // Activity Types
+    'Call' => 'Call',
+    'Email' => 'Email',
+    'Meeting' => 'Meeting',
+    'Task' => 'Task',
+    'Note' => 'Note',
+
+    // Success Messages
+    'Company created successfully.' => 'Company created successfully.',
+    'Company updated successfully.' => 'Company updated successfully.',
+    'Company deleted successfully.' => 'Company deleted successfully.',
+    'Contact created successfully.' => 'Contact created successfully.',
+    'Contact updated successfully.' => 'Contact updated successfully.',
+    'Contact deleted successfully.' => 'Contact deleted successfully.',
+    'Deal created successfully.' => 'Deal created successfully.',
+    'Deal updated successfully.' => 'Deal updated successfully.',
+    'Deal deleted successfully.' => 'Deal deleted successfully.',
+    'Activity created successfully.' => 'Activity created successfully.',
+    'Activity updated successfully.' => 'Activity updated successfully.',
+    'Activity deleted successfully.' => 'Activity deleted successfully.',
+];

@@ -13,19 +13,19 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        ダッシュボード
+                        {{ __('messages.Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.*')">
-                        会社
+                        {{ __('messages.Companies') }}
                     </x-nav-link>
                     <x-nav-link :href="route('contacts.index')" :active="request()->routeIs('contacts.*')">
-連絡先
+                        {{ __('messages.Contacts') }}
                     </x-nav-link>
                     <x-nav-link :href="route('deals.index')" :active="request()->routeIs('deals.*')">
-                        商談
+                        {{ __('messages.Deals') }}
                     </x-nav-link>
                     <x-nav-link :href="route('activities.index')" :active="request()->routeIs('activities.*')">
-                        活動
+                        {{ __('messages.Activities') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -47,7 +47,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('messages.Profile') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -57,7 +57,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('messages.Log Out') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -80,19 +80,19 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('messages.Dashboard') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.*')">
-                {{ __('Companies') }}
+                {{ __('messages.Companies') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('contacts.index')" :active="request()->routeIs('contacts.*')">
-                {{ __('Contacts') }}
+                {{ __('messages.Contacts') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('deals.index')" :active="request()->routeIs('deals.*')">
-                {{ __('Deals') }}
+                {{ __('messages.Deals') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('activities.index')" :active="request()->routeIs('activities.*')">
-                {{ __('Activities') }}
+                {{ __('messages.Activities') }}
             </x-responsive-nav-link>
         </div>
 
@@ -105,7 +105,7 @@
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                    {{ __('messages.Profile') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
