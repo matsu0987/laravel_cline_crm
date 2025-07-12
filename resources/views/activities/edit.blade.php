@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Edit Activity') }}: {{ $activity->title }}
+            {{ __('messages.Edit Activity') }}: {{ $activity->title }}
         </h2>
     </x-slot>
 
@@ -15,9 +15,9 @@
 
                         <!-- Company -->
                         <div class="mb-4">
-                            <x-input-label for="company_id" :value="__('Company')" />
+                            <x-input-label for="company_id" :value="__('messages.Company')" />
                             <select id="company_id" name="company_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" required>
-                                <option value="">{{ __('Select Company') }}</option>
+                                <option value="">{{ __('messages.Select Company') }}</option>
                                 @foreach($companies as $company)
                                     <option value="{{ $company->id }}" {{ old('company_id', $activity->company_id) == $company->id ? 'selected' : '' }}>
                                         {{ $company->name }}
@@ -29,9 +29,9 @@
 
                         <!-- Contact -->
                         <div class="mb-4">
-                            <x-input-label for="contact_id" :value="__('Contact')" />
+                            <x-input-label for="contact_id" :value="__('messages.Contact')" />
                             <select id="contact_id" name="contact_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
-                                <option value="">{{ __('Select Contact') }}</option>
+                                <option value="">{{ __('messages.Select Contact') }}</option>
                                 @foreach($contacts as $contact)
                                     <option value="{{ $contact->id }}" {{ old('contact_id', $activity->contact_id) == $contact->id ? 'selected' : '' }}>
                                         {{ $contact->full_name }}
@@ -43,9 +43,9 @@
 
                         <!-- Deal -->
                         <div class="mb-4">
-                            <x-input-label for="deal_id" :value="__('Deal')" />
+                            <x-input-label for="deal_id" :value="__('messages.Deal')" />
                             <select id="deal_id" name="deal_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
-                                <option value="">{{ __('Select Deal') }}</option>
+                                <option value="">{{ __('messages.Select Deal') }}</option>
                                 @foreach($deals as $deal)
                                     <option value="{{ $deal->id }}" {{ old('deal_id', $activity->deal_id) == $deal->id ? 'selected' : '' }}>
                                         {{ $deal->title }}
@@ -57,7 +57,7 @@
 
                         <!-- Type -->
                         <div class="mb-4">
-                            <x-input-label for="type" :value="__('Type')" />
+                            <x-input-label for="type" :value="__('messages.Type')" />
                             <select id="type" name="type" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" required>
                                 @foreach(\App\Models\Activity::TYPES as $type)
                                     <option value="{{ $type }}" {{ old('type', $activity->type) == $type ? 'selected' : '' }}>
@@ -70,28 +70,28 @@
 
                         <!-- Title -->
                         <div class="mb-4">
-                            <x-input-label for="title" :value="__('Title')" />
+                            <x-input-label for="title" :value="__('messages.Title')" />
                             <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title', $activity->title)" required autofocus />
                             <x-input-error :messages="$errors->get('title')" class="mt-2" />
                         </div>
 
                         <!-- Description -->
                         <div class="mb-4">
-                            <x-input-label for="description" :value="__('Description')" />
+                            <x-input-label for="description" :value="__('messages.Description')" />
                             <textarea id="description" name="description" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">{{ old('description', $activity->description) }}</textarea>
                             <x-input-error :messages="$errors->get('description')" class="mt-2" />
                         </div>
 
                         <!-- Scheduled At -->
                         <div class="mb-4">
-                            <x-input-label for="scheduled_at" :value="__('Scheduled At')" />
+                            <x-input-label for="scheduled_at" :value="__('messages.Scheduled At')" />
                             <x-text-input id="scheduled_at" class="block mt-1 w-full" type="datetime-local" name="scheduled_at" :value="old('scheduled_at', $activity->scheduled_at ? $activity->scheduled_at->format('Y-m-d\TH:i') : '')" />
                             <x-input-error :messages="$errors->get('scheduled_at')" class="mt-2" />
                         </div>
 
                         <!-- Status -->
                         <div class="mb-4">
-                            <x-input-label for="status" :value="__('Status')" />
+                            <x-input-label for="status" :value="__('messages.Status')" />
                             <select id="status" name="status" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" required>
                                 @foreach(\App\Models\Activity::STATUSES as $status)
                                     <option value="{{ $status }}" {{ old('status', $activity->status) == $status ? 'selected' : '' }}>
@@ -104,7 +104,7 @@
 
                         <!-- Outcome (only visible when status is completed) -->
                         <div id="outcome-container" class="mb-4" style="{{ $activity->status === 'completed' ? '' : 'display: none;' }}">
-                            <x-input-label for="outcome" :value="__('Outcome')" />
+                            <x-input-label for="outcome" :value="__('messages.Outcome')" />
                             <textarea id="outcome" name="outcome" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">{{ old('outcome', $activity->outcome) }}</textarea>
                             <x-input-error :messages="$errors->get('outcome')" class="mt-2" />
                         </div>
@@ -113,21 +113,21 @@
                             @if($activity->contact_id)
                                 <input type="hidden" name="redirect_to_contact" value="1">
                                 <a href="{{ route('contacts.show', $activity->contact_id) }}" class="inline-flex items-center px-4 py-2 bg-gray-300 border border-transparent rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition ease-in-out duration-150 mr-2">
-                                    {{ __('Cancel') }}
+                                    {{ __('messages.Cancel') }}
                                 </a>
                             @elseif($activity->deal_id)
                                 <input type="hidden" name="redirect_to_deal" value="1">
                                 <a href="{{ route('deals.show', $activity->deal_id) }}" class="inline-flex items-center px-4 py-2 bg-gray-300 border border-transparent rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition ease-in-out duration-150 mr-2">
-                                    {{ __('Cancel') }}
+                                    {{ __('messages.Cancel') }}
                                 </a>
                             @else
                                 <input type="hidden" name="redirect_to_company" value="1">
                                 <a href="{{ route('companies.show', $activity->company_id) }}" class="inline-flex items-center px-4 py-2 bg-gray-300 border border-transparent rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition ease-in-out duration-150 mr-2">
-                                    {{ __('Cancel') }}
+                                    {{ __('messages.Cancel') }}
                                 </a>
                             @endif
                             <x-primary-button>
-                                {{ __('Update') }}
+                                {{ __('messages.Update') }}
                             </x-primary-button>
                         </div>
                     </form>
@@ -147,8 +147,8 @@
             // 会社選択時の処理
             companySelect.addEventListener('change', function() {
                 const companyId = this.value;
-                contactSelect.innerHTML = '<option value="">{{ __("Select Contact") }}</option>';
-                dealSelect.innerHTML = '<option value="">{{ __("Select Deal") }}</option>';
+                contactSelect.innerHTML = '<option value="">{{ __("messages.Select Contact") }}</option>';
+                dealSelect.innerHTML = '<option value="">{{ __("messages.Select Deal") }}</option>';
 
                 if (companyId) {
                     // 担当者を取得

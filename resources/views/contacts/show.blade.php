@@ -6,13 +6,13 @@
             </h2>
             <div>
                 <a href="{{ route('contacts.edit', $contact) }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150 mr-2">
-                    {{ __('Edit') }}
+                    {{ __('messages.Edit') }}
                 </a>
                 <form class="inline-block" action="{{ route('contacts.destroy', $contact) }}" method="POST" onsubmit="return confirm('{{ __('Are you sure you want to delete this contact?') }}');">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 focus:bg-red-700 active:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150">
-                        {{ __('Delete') }}
+                        {{ __('messages.Delete') }}
                     </button>
                 </form>
             </div>
@@ -30,40 +30,40 @@
             <!-- 担当者情報 -->
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-6">
                 <div class="p-6 text-gray-900">
-                    <h3 class="text-lg font-semibold mb-4">{{ __('Contact Information') }}</h3>
+                    <h3 class="text-lg font-semibold mb-4">{{ __('messages.Contact Information') }}</h3>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Company') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Company') }}</p>
                             <p class="font-medium">
                                 <a href="{{ route('companies.show', $contact->company) }}" class="text-indigo-600 hover:text-indigo-900">{{ $contact->company->name }}</a>
                             </p>
                         </div>
 
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Position') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Position') }}</p>
                             <p class="font-medium">{{ $contact->position ?? '-' }}</p>
                         </div>
 
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Email') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Email') }}</p>
                             <p class="font-medium">{{ $contact->email ?? '-' }}</p>
                         </div>
 
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Phone') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Phone') }}</p>
                             <p class="font-medium">{{ $contact->phone ?? '-' }}</p>
                         </div>
 
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Mobile') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Mobile') }}</p>
                             <p class="font-medium">{{ $contact->mobile ?? '-' }}</p>
                         </div>
                     </div>
 
                     @if($contact->notes)
                         <div class="mt-4">
-                            <p class="text-sm text-gray-600">{{ __('Notes') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Notes') }}</p>
                             <p class="font-medium">{{ $contact->notes }}</p>
                         </div>
                     @endif
@@ -74,7 +74,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-6">
                 <div class="p-6 text-gray-900">
                     <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-lg font-semibold">{{ __('Deals') }}</h3>
+                        <h3 class="text-lg font-semibold">{{ __('messages.Deals') }}</h3>
                         <a href="{{ route('deals.create', ['contact_id' => $contact->id, 'company_id' => $contact->company_id]) }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
                             {{ __('messages.Add Deal') }}
                         </a>
@@ -85,11 +85,11 @@
                             <table class="min-w-full divide-y divide-gray-200">
                                 <thead class="bg-gray-50">
                                     <tr>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('Title') }}</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('Amount') }}</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('Status') }}</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('Expected Closing') }}</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('Actions') }}</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('messages.Title') }}</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('messages.Amount') }}</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('messages.Status') }}</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('messages.Expected Closing') }}</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('messages.Actions') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
@@ -118,7 +118,7 @@
                             </table>
                         </div>
                     @else
-                        <p class="text-gray-500">{{ __('No deals found.') }}</p>
+                        <p class="text-gray-500">{{ __('messages.No deals found.') }}</p>
                     @endif
                 </div>
             </div>
@@ -127,7 +127,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-lg font-semibold">{{ __('Activities') }}</h3>
+                        <h3 class="text-lg font-semibold">{{ __('messages.Activities') }}</h3>
                         <a href="{{ route('activities.create', ['contact_id' => $contact->id, 'company_id' => $contact->company_id]) }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
                             {{ __('messages.Add Activity') }}
                         </a>
@@ -147,7 +147,7 @@
                                     @endif
                                     @if($activity->deal)
                                         <p class="text-sm text-gray-600">
-                                            {{ __('Deal') }}:
+                                            {{ __('messages.Deal') }}:
                                             <a href="{{ route('deals.show', $activity->deal) }}" class="text-indigo-600 hover:text-indigo-900">{{ $activity->deal->title }}</a>
                                         </p>
                                     @endif
@@ -155,13 +155,13 @@
                                         <p class="text-sm text-gray-600 mt-2">{{ $activity->description }}</p>
                                     @endif
                                     <div class="mt-2">
-                                        <a href="{{ route('activities.edit', $activity) }}" class="text-indigo-600 hover:text-indigo-900 text-sm">{{ __('Edit') }}</a>
+                                        <a href="{{ route('activities.edit', $activity) }}" class="text-indigo-600 hover:text-indigo-900 text-sm">{{ __('messages.messages.Edit') }}</a>
                                     </div>
                                 </div>
                             @endforeach
                         </div>
                     @else
-                        <p class="text-gray-500">{{ __('No activities found.') }}</p>
+                        <p class="text-gray-500">{{ __('messages.No activities found.') }}</p>
                     @endif
                 </div>
             </div>

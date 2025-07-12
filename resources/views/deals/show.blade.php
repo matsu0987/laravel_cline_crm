@@ -6,13 +6,13 @@
             </h2>
             <div>
                 <a href="{{ route('deals.edit', $deal) }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150 mr-2">
-                    {{ __('Edit') }}
+                    {{ __('messages.Edit') }}
                 </a>
                 <form class="inline-block" action="{{ route('deals.destroy', $deal) }}" method="POST" onsubmit="return confirm('{{ __('Are you sure you want to delete this deal?') }}');">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 focus:bg-red-700 active:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150">
-                        {{ __('Delete') }}
+                        {{ __('messages.Delete') }}
                     </button>
                 </form>
             </div>
@@ -30,18 +30,18 @@
             <!-- 商談情報 -->
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-6">
                 <div class="p-6 text-gray-900">
-                    <h3 class="text-lg font-semibold mb-4">{{ __('Deal Information') }}</h3>
+                    <h3 class="text-lg font-semibold mb-4">{{ __('messages.Deal Information') }}</h3>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Company') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Company') }}</p>
                             <p class="font-medium">
                                 <a href="{{ route('companies.show', $deal->company) }}" class="text-indigo-600 hover:text-indigo-900">{{ $deal->company->name }}</a>
                             </p>
                         </div>
 
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Contact') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Contact') }}</p>
                             <p class="font-medium">
                                 @if($deal->contact)
                                     <a href="{{ route('contacts.show', $deal->contact) }}" class="text-indigo-600 hover:text-indigo-900">{{ $deal->contact->full_name }}</a>
@@ -52,12 +52,12 @@
                         </div>
 
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Amount') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Amount') }}</p>
                             <p class="font-medium">{{ number_format($deal->amount) }}</p>
                         </div>
 
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Status') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Status') }}</p>
                             <p class="font-medium">
                                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full
                                     @if($deal->status === 'closed_won')
@@ -74,26 +74,26 @@
                         </div>
 
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Expected Closing Date') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Expected Closing Date') }}</p>
                             <p class="font-medium">{{ $deal->expected_closing_date ? $deal->expected_closing_date->format('Y-m-d') : '-' }}</p>
                         </div>
 
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Probability') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Probability') }}</p>
                             <p class="font-medium">{{ $deal->probability }}%</p>
                         </div>
                     </div>
 
                     @if($deal->description)
                         <div class="mt-4">
-                            <p class="text-sm text-gray-600">{{ __('Description') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Description') }}</p>
                             <p class="font-medium">{{ $deal->description }}</p>
                         </div>
                     @endif
 
                     @if($deal->notes)
                         <div class="mt-4">
-                            <p class="text-sm text-gray-600">{{ __('Notes') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Notes') }}</p>
                             <p class="font-medium">{{ $deal->notes }}</p>
                         </div>
                     @endif

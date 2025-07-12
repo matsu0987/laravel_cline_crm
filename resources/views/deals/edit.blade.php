@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Edit Deal') }}: {{ $deal->title }}
+            {{ __('messages.Edit Deal') }}: {{ $deal->title }}
         </h2>
     </x-slot>
 
@@ -15,9 +15,9 @@
 
                         <!-- Company -->
                         <div class="mb-4">
-                            <x-input-label for="company_id" :value="__('Company')" />
+                            <x-input-label for="company_id" :value="__('messages.Company')" />
                             <select id="company_id" name="company_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" required>
-                                <option value="">{{ __('Select Company') }}</option>
+                                <option value="">{{ __('messages.Select Company') }}</option>
                                 @foreach($companies as $company)
                                     <option value="{{ $company->id }}" {{ old('company_id', $deal->company_id) == $company->id ? 'selected' : '' }}>
                                         {{ $company->name }}
@@ -29,9 +29,9 @@
 
                         <!-- Contact -->
                         <div class="mb-4">
-                            <x-input-label for="contact_id" :value="__('Contact')" />
+                            <x-input-label for="contact_id" :value="__('messages.Contact')" />
                             <select id="contact_id" name="contact_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
-                                <option value="">{{ __('Select Contact') }}</option>
+                                <option value="">{{ __('messages.Select Contact') }}</option>
                                 @foreach($contacts as $contact)
                                     <option value="{{ $contact->id }}" {{ old('contact_id', $deal->contact_id) == $contact->id ? 'selected' : '' }}>
                                         {{ $contact->full_name }}
@@ -43,21 +43,21 @@
 
                         <!-- Title -->
                         <div class="mb-4">
-                            <x-input-label for="title" :value="__('Title')" />
+                            <x-input-label for="title" :value="__('messages.Title')" />
                             <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title', $deal->title)" required autofocus />
                             <x-input-error :messages="$errors->get('title')" class="mt-2" />
                         </div>
 
                         <!-- Amount -->
                         <div class="mb-4">
-                            <x-input-label for="amount" :value="__('Amount')" />
+                            <x-input-label for="amount" :value="__('messages.Amount')" />
                             <x-text-input id="amount" class="block mt-1 w-full" type="number" name="amount" :value="old('amount', $deal->amount)" required step="0.01" min="0" />
                             <x-input-error :messages="$errors->get('amount')" class="mt-2" />
                         </div>
 
                         <!-- Status -->
                         <div class="mb-4">
-                            <x-input-label for="status" :value="__('Status')" />
+                            <x-input-label for="status" :value="__('messages.Status')" />
                             <select id="status" name="status" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" required>
                                 @foreach(\App\Models\Deal::STATUSES as $status)
                                     <option value="{{ $status }}" {{ old('status', $deal->status) == $status ? 'selected' : '' }}>
@@ -70,38 +70,38 @@
 
                         <!-- Expected Closing Date -->
                         <div class="mb-4">
-                            <x-input-label for="expected_closing_date" :value="__('Expected Closing Date')" />
+                            <x-input-label for="expected_closing_date" :value="__('messages.Expected Closing Date')" />
                             <x-text-input id="expected_closing_date" class="block mt-1 w-full" type="date" name="expected_closing_date" :value="old('expected_closing_date', $deal->expected_closing_date ? $deal->expected_closing_date->format('Y-m-d') : '')" />
                             <x-input-error :messages="$errors->get('expected_closing_date')" class="mt-2" />
                         </div>
 
                         <!-- Probability -->
                         <div class="mb-4">
-                            <x-input-label for="probability" :value="__('Probability (%)')" />
+                            <x-input-label for="probability" :value="__('messages.Probability (%)')" />
                             <x-text-input id="probability" class="block mt-1 w-full" type="number" name="probability" :value="old('probability', $deal->probability)" required min="0" max="100" />
                             <x-input-error :messages="$errors->get('probability')" class="mt-2" />
                         </div>
 
                         <!-- Description -->
                         <div class="mb-4">
-                            <x-input-label for="description" :value="__('Description')" />
+                            <x-input-label for="description" :value="__('messages.Description')" />
                             <textarea id="description" name="description" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">{{ old('description', $deal->description) }}</textarea>
                             <x-input-error :messages="$errors->get('description')" class="mt-2" />
                         </div>
 
                         <!-- Notes -->
                         <div class="mb-4">
-                            <x-input-label for="notes" :value="__('Notes')" />
+                            <x-input-label for="notes" :value="__('messages.Notes')" />
                             <textarea id="notes" name="notes" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">{{ old('notes', $deal->notes) }}</textarea>
                             <x-input-error :messages="$errors->get('notes')" class="mt-2" />
                         </div>
 
                         <div class="flex items-center justify-end mt-4">
                             <a href="{{ route('deals.show', $deal) }}" class="inline-flex items-center px-4 py-2 bg-gray-300 border border-transparent rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition ease-in-out duration-150 mr-2">
-                                {{ __('Cancel') }}
+                                {{ __('messages.Cancel') }}
                             </a>
                             <x-primary-button>
-                                {{ __('Update') }}
+                                {{ __('messages.Update') }}
                             </x-primary-button>
                         </div>
                     </form>

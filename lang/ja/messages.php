@@ -87,6 +87,8 @@ return [
     'Related to' => '関連：',
     'Created at' => '作成日',
     'Updated at' => '更新日',
+    'Created by' => '作成者',
+    'Scheduled at' => '予定日時',
 
     // Deal Statuses
     'Prospecting' => '見込み客発掘',
@@ -117,4 +119,19 @@ return [
     'Activity created successfully.' => '活動が正常に作成されました。',
     'Activity updated successfully.' => '活動が正常に更新されました。',
     'Activity deleted successfully.' => '活動が正常に削除されました。',
+
+    // Form Options
+    'Select Company' => '会社を選択',
+    'Select Contact' => '連絡先を選択',
+    'Select Deal' => '商談を選択',
+
+    // Additional Form Fields
+    'Expected Closing Date' => '見込み成約日',
+    'Probability (%)' => '確率（%）',
+    'Outcome' => '結果',
+
+    // Authentication
+    'Remember me' => 'ログイン状態を保持',
+    'Forgot your password?' => 'パスワードをお忘れですか？',
+    'Log in' => 'ログイン',
 ];

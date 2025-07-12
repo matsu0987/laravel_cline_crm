@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Add Company') }}
+            {{ __('messages.Add Company') }}
         </h2>
     </x-slot>
 
@@ -14,52 +14,52 @@
 
                         <!-- Name -->
                         <div class="mb-4">
-                            <x-input-label for="name" :value="__('Name')" />
+                            <x-input-label for="name" :value="__('messages.Name')" />
                             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
                             <x-input-error :messages="$errors->get('name')" class="mt-2" />
                         </div>
 
                         <!-- Industry -->
                         <div class="mb-4">
-                            <x-input-label for="industry" :value="__('Industry')" />
+                            <x-input-label for="industry" :value="__('messages.Industry')" />
                             <x-text-input id="industry" class="block mt-1 w-full" type="text" name="industry" :value="old('industry')" />
                             <x-input-error :messages="$errors->get('industry')" class="mt-2" />
                         </div>
 
                         <!-- Address -->
                         <div class="mb-4">
-                            <x-input-label for="address" :value="__('Address')" />
+                            <x-input-label for="address" :value="__('messages.Address')" />
                             <textarea id="address" name="address" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">{{ old('address') }}</textarea>
                             <x-input-error :messages="$errors->get('address')" class="mt-2" />
                         </div>
 
                         <!-- Phone -->
                         <div class="mb-4">
-                            <x-input-label for="phone" :value="__('Phone')" />
+                            <x-input-label for="phone" :value="__('messages.Phone')" />
                             <x-text-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" />
                             <x-input-error :messages="$errors->get('phone')" class="mt-2" />
                         </div>
 
                         <!-- Website -->
                         <div class="mb-4">
-                            <x-input-label for="website" :value="__('Website')" />
+                            <x-input-label for="website" :value="__('messages.Website')" />
                             <x-text-input id="website" class="block mt-1 w-full" type="text" name="website" :value="old('website')" />
                             <x-input-error :messages="$errors->get('website')" class="mt-2" />
                         </div>
 
                         <!-- Notes -->
                         <div class="mb-4">
-                            <x-input-label for="notes" :value="__('Notes')" />
+                            <x-input-label for="notes" :value="__('messages.Notes')" />
                             <textarea id="notes" name="notes" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">{{ old('notes') }}</textarea>
                             <x-input-error :messages="$errors->get('notes')" class="mt-2" />
                         </div>
 
                         <div class="flex items-center justify-end mt-4">
                             <a href="{{ route('companies.index') }}" class="inline-flex items-center px-4 py-2 bg-gray-300 border border-transparent rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition ease-in-out duration-150 mr-2">
-                                {{ __('Cancel') }}
+                                {{ __('messages.Cancel') }}
                             </a>
                             <x-primary-button>
-                                {{ __('Save') }}
+                                {{ __('messages.Save') }}
                             </x-primary-button>
                         </div>
                     </form>

@@ -43,35 +43,35 @@
                                             {{ $activity->created_at->format('Y-m-d H:i') }}
                                         </div>
                                     </div>
-                                    <p class="text-sm text-gray-600">{{ __('Type') }}: {{ __(ucfirst($activity->type)) }}</p>
+                                    <p class="text-sm text-gray-600">{{ __('messages.Type') }}: {{ __(ucfirst($activity->type)) }}</p>
                                     <p class="text-sm text-gray-600">
-                                        {{ __('Company') }}:
+                                        {{ __('messages.Company') }}:
                                         <a href="{{ route('companies.show', $activity->company) }}" class="text-indigo-600 hover:text-indigo-900">{{ $activity->company->name }}</a>
                                     </p>
                                     @if($activity->contact)
                                         <p class="text-sm text-gray-600">
-                                            {{ __('Contact') }}:
+                                            {{ __('messages.Contact') }}:
                                             <a href="{{ route('contacts.show', $activity->contact) }}" class="text-indigo-600 hover:text-indigo-900">{{ $activity->contact->full_name }}</a>
                                         </p>
                                     @endif
                                     @if($activity->deal)
                                         <p class="text-sm text-gray-600">
-                                            {{ __('Deal') }}:
+                                            {{ __('messages.Deal') }}:
                                             <a href="{{ route('deals.show', $activity->deal) }}" class="text-indigo-600 hover:text-indigo-900">{{ $activity->deal->title }}</a>
                                         </p>
                                     @endif
                                     @if($activity->scheduled_at)
-                                        <p class="text-sm text-gray-600">{{ __('Scheduled at') }}: {{ $activity->scheduled_at->format('Y-m-d H:i') }}</p>
+                                        <p class="text-sm text-gray-600">{{ __('messages.Scheduled at') }}: {{ $activity->scheduled_at->format('Y-m-d H:i') }}</p>
                                     @endif
                                     @if($activity->description)
                                         <p class="text-sm text-gray-600 mt-2">{{ $activity->description }}</p>
                                     @endif
                                     <div class="mt-2 flex space-x-2">
-                                        <a href="{{ route('activities.edit', $activity) }}" class="text-indigo-600 hover:text-indigo-900 text-sm">{{ __('Edit') }}</a>
+                                        <a href="{{ route('activities.edit', $activity) }}" class="text-indigo-600 hover:text-indigo-900 text-sm">{{ __('messages.Edit') }}</a>
                                         <form class="inline-block" action="{{ route('activities.destroy', $activity) }}" method="POST" onsubmit="return confirm('{{ __('Are you sure you want to delete this activity?') }}');">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="text-red-600 hover:text-red-900 text-sm">{{ __('Delete') }}</button>
+                                            <button type="submit" class="text-red-600 hover:text-red-900 text-sm">{{ __('messages.Delete') }}</button>
                                         </form>
                                     </div>
                                 </div>

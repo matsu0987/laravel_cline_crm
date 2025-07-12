@@ -6,13 +6,13 @@
             </h2>
             <div>
                 <a href="{{ route('companies.edit', $company) }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150 mr-2">
-                    {{ __('Edit') }}
+                    {{ __('messages.Edit') }}
                 </a>
                 <form class="inline-block" action="{{ route('companies.destroy', $company) }}" method="POST" onsubmit="return confirm('{{ __('Are you sure you want to delete this company?') }}');">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 focus:bg-red-700 active:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150">
-                        {{ __('Delete') }}
+                        {{ __('messages.Delete') }}
                     </button>
                 </form>
             </div>
@@ -30,21 +30,21 @@
             <!-- 企業情報 -->
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-6">
                 <div class="p-6 text-gray-900">
-                    <h3 class="text-lg font-semibold mb-4">{{ __('Company Information') }}</h3>
+                    <h3 class="text-lg font-semibold mb-4">{{ __('messages.Company Information') }}</h3>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Industry') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Industry') }}</p>
                             <p class="font-medium">{{ $company->industry ?? '-' }}</p>
                         </div>
 
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Phone') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Phone') }}</p>
                             <p class="font-medium">{{ $company->phone ?? '-' }}</p>
                         </div>
 
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Website') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Website') }}</p>
                             <p class="font-medium">
                                 @if($company->website)
                                     <a href="{{ $company->website }}" target="_blank" class="text-indigo-600 hover:text-indigo-900">{{ $company->website }}</a>
@@ -55,14 +55,14 @@
                         </div>
 
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Address') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Address') }}</p>
                             <p class="font-medium">{{ $company->address ?? '-' }}</p>
                         </div>
                     </div>
 
                     @if($company->notes)
                         <div class="mt-4">
-                            <p class="text-sm text-gray-600">{{ __('Notes') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Notes') }}</p>
                             <p class="font-medium">{{ $company->notes }}</p>
                         </div>
                     @endif

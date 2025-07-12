@@ -6,13 +6,13 @@
             </h2>
             <div>
                 <a href="{{ route('activities.edit', $activity) }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150 mr-2">
-                    {{ __('Edit') }}
+                    {{ __('messages.Edit') }}
                 </a>
                 <form class="inline-block" action="{{ route('activities.destroy', $activity) }}" method="POST" onsubmit="return confirm('{{ __('Are you sure you want to delete this activity?') }}');">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 focus:bg-red-700 active:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150">
-                        {{ __('Delete') }}
+                        {{ __('messages.Delete') }}
                     </button>
                 </form>
             </div>
@@ -48,7 +48,7 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Company') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Company') }}</p>
                             <p class="font-medium">
                                 <a href="{{ route('companies.show', $activity->company) }}" class="text-indigo-600 hover:text-indigo-900">{{ $activity->company->name }}</a>
                             </p>
@@ -56,7 +56,7 @@
 
                         @if($activity->contact)
                             <div>
-                                <p class="text-sm text-gray-600">{{ __('Contact') }}</p>
+                                <p class="text-sm text-gray-600">{{ __('messages.Contact') }}</p>
                                 <p class="font-medium">
                                     <a href="{{ route('contacts.show', $activity->contact) }}" class="text-indigo-600 hover:text-indigo-900">{{ $activity->contact->full_name }}</a>
                                 </p>
@@ -65,7 +65,7 @@
 
                         @if($activity->deal)
                             <div>
-                                <p class="text-sm text-gray-600">{{ __('Deal') }}</p>
+                                <p class="text-sm text-gray-600">{{ __('messages.Deal') }}</p>
                                 <p class="font-medium">
                                     <a href="{{ route('deals.show', $activity->deal) }}" class="text-indigo-600 hover:text-indigo-900">{{ $activity->deal->title }}</a>
                                 </p>
@@ -74,34 +74,34 @@
 
                         @if($activity->scheduled_at)
                             <div>
-                                <p class="text-sm text-gray-600">{{ __('Scheduled at') }}</p>
+                                <p class="text-sm text-gray-600">{{ __('messages.Scheduled at') }}</p>
                                 <p class="font-medium">{{ $activity->scheduled_at->format('Y-m-d H:i') }}</p>
                             </div>
                         @endif
 
                         @if($activity->completed_at)
                             <div>
-                                <p class="text-sm text-gray-600">{{ __('Completed at') }}</p>
+                                <p class="text-sm text-gray-600">{{ __('messages.Completed at') }}</p>
                                 <p class="font-medium">{{ $activity->completed_at->format('Y-m-d H:i') }}</p>
                             </div>
                         @endif
 
                         <div>
-                            <p class="text-sm text-gray-600">{{ __('Created by') }}</p>
+                            <p class="text-sm text-gray-600">{{ __('messages.Created by') }}</p>
                             <p class="font-medium">{{ $activity->user->name }}</p>
                         </div>
                     </div>
 
                     @if($activity->description)
                         <div class="mb-6">
-                            <h3 class="text-lg font-semibold mb-2">{{ __('Description') }}</h3>
+                            <h3 class="text-lg font-semibold mb-2">{{ __('messages.Description') }}</h3>
                             <p>{{ $activity->description }}</p>
                         </div>
                     @endif
 
                     @if($activity->outcome)
                         <div>
-                            <h3 class="text-lg font-semibold mb-2">{{ __('Outcome') }}</h3>
+                            <h3 class="text-lg font-semibold mb-2">{{ __('messages.Outcome') }}</h3>
                             <p>{{ $activity->outcome }}</p>
                         </div>
                     @endif
